@@ -1,7 +1,12 @@
+html {
+  scroll-behavior: smooth;
+}
 
 
 
 
+
+/* animate */
 
 .animate-up {
     opacity: 0;
@@ -16,20 +21,33 @@
     filter:blur(0px);
   }
 
-  .animate-sideways {
+  .animate-left {
     opacity:0;
     filter:blur(2px);
     transform:translateX(-100%);
     transition: all 1s;
   }
-  .animate-sideways.aos-animate {
+  .animate-left.aos-animate {
+    opacity:1;
+    filter:blur(0px);
+    transform:translateX(0%);
+  }
+
+ 
+  .animate-right {
+    opacity:0;
+    filter:blur(2px);
+    transform:translateX(100%);
+    transition: all 1s;
+  }
+  .animate-right.aos-animate {
     opacity:1;
     filter:blur(0px);
     transform:translateX(0%);
   }
 
 
-
+/* checkbox stuff */
 
   .checkbox {
     opacity: 0;

@@ -3,3 +3,4 @@ __pycache__
 .env
 logs/debug.log
 node_modules/
+.vscode
