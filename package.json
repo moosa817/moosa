@@ -1,8 +1,12 @@
 {
   "scripts": {
-    "watch": "npx tailwindcss -i ./app/public/css/src/input.css -o ./app/public/css/dist/output.css --watch"
+    "watch": "npx tailwindcss -i ./app/public/css/src/input.css -o ./app/public/css/dist/output.css --watch",
+    "copy": "cp 'node_modules/flowbite/dist/flowbite.min.js' 'app/public/js/flowbite.min.js'",
+    "build":"npm run copy && npm run watch"
   },
-  "devDependencies": {
+  "dependencies": {
+    "flowbite": "^1.6.3",
     "tailwindcss": "^3.2.7"
   }
+
 }
