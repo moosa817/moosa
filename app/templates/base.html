@@ -56,7 +56,7 @@
       aria-label="Sidebar">
       <div class="h-full px-3 pb-4 overflow-y-auto bg-gray-300 dark:bg-gray-800">
          <ul class="space-y-2">
-            <li>
+            <li class="index">
                <a href="#home"
                   class=" hover:scale-105 hover:font-bold flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700">
                   <i class="fa-solid fa-home text-gray-400 p-1"></i>
@@ -64,8 +64,8 @@
                </a>
             </li>
 
-            <li>
-               <a href="#"
+            <li class="index">
+               <a href="#about"
                   class="hover:scale-105 flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700">
                   <i class="fa-solid fa-address-book text-gray-400 p-1"></i>
                   <span class="ml-3">About Me</span>
@@ -73,8 +73,8 @@
             </li>
 
 
-            <li>
-               <a href="#"
+            <li class="index">
+               <a href="#skills"
                   class="hover:scale-105 flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700">
                   <i class="fa-solid fa-graduation-cap text-gray-400 p-1"></i>
                   <span class="ml-3">Skills</span>
@@ -82,17 +82,17 @@
             </li>
 
 
-            <li>
-               <a href="#"
-                  class="hover:scale-105 flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700">
+            <li id="projects">
+               <a
+                  class="hover:cursor-pointer hover:scale-105 flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 ">
                   <i class="fa-solid fa-rectangle-list text-gray-400 p-1"></i>
                   <span class="ml-3">Projects</span>
                </a>
             </li>
 
 
-            <li>
-               <a href="#"
+            <li class="index">
+               <a href="#contact"
                   class="hover:scale-105 flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700">
                   <i class="fa-solid fa-phone text-gray-400 p-1"></i>
                   <span class="ml-3">Contact Me</span>
@@ -114,14 +114,18 @@
       </div>
    </aside>
 
-   <div class="sm:ml-64 dark:bg-gray-900 bg-gray-200 h-[100vh]">
-      {% block content %}{%endblock%}
+   <div id="loading-bar">
+      <div class="bar"></div>
    </div>
 
 
 
+   <div id="content" class="sm:ml-64 overflow-y-hidden">
 
 
+      {% block content %}{%endblock%}
+
+   </div>
 
 </body>
 
@@ -129,5 +133,6 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"
    integrity="sha512-pumBsjNRGGqkPzKHndZMaAG+bir374sORyzM3uulLV14lN5LyykqNk8eEeUlUkB3U0M4FApyaHraT65ihJhDpQ=="
    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-<script src="public/js/style.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.4/flowbite.min.js"></script>
+<script src="public/js/main.js"></script>
+<script src="public/js/style.js"></script>
