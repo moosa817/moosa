@@ -45,7 +45,7 @@ def contact():
                 Email: {email}
                 message: {message}
             """
-            send_email(config.mail_email_reciever, "Message", message)
+            send_email(config.mail_email_reciever, "Contact Form", message)
             return jsonify({"success": "Message Sent Successfully"})
 
     return render_template("contact.html")
