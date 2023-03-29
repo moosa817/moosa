@@ -21,7 +21,8 @@ class MyApp:
     def load_blueprints(self):
         self.app.register_blueprint(index.index_page)
         self.app.register_blueprint(error.errors_bp)
+        self.app.register_blueprint(contact_form.contact_page)
 
     def run_app(self):
         debug_mode = True if str(config.debug_mode) == 'True' else False
-        self.app.run(debug=debug_mode)
+        self.app.run(host='0.0.0.0', debug=debug_mode)

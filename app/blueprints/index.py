@@ -3,7 +3,6 @@ import config
 import os
 import time
 
-print(config.template_dir)
 index_page = Blueprint('index',
                        __name__,
                        template_folder=config.template_dir,
