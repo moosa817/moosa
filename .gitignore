@@ -1,6 +1,8 @@
 env
 __pycache__
 .env
-logs/debug.log
 node_modules/
 .vscode
+package-lock.json
+package.json
+tailwind.config.json

@@ -1,0 +1,27 @@
+2023-03-30 02:46:42,776 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2023-03-30 02:46:42,777 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2023-03-30 02:46:42,781 - werkzeug - INFO -  * Restarting with stat
+2023-03-30 02:46:43,309 - werkzeug - WARNING -  * Debugger is active!
+2023-03-30 02:46:43,311 - werkzeug - INFO -  * Debugger PIN: 123-124-651
+2023-03-30 02:46:45,815 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2023 02:46:45] "GET / HTTP/1.1" 200 -
+2023-03-30 02:46:46,089 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2023 02:46:46] "GET /public/css/dist/output.css HTTP/1.1" 200 -
+2023-03-30 02:46:46,163 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2023 02:46:46] "GET /public/css/dist/style.css HTTP/1.1" 200 -
+2023-03-30 02:46:46,193 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2023 02:46:46] "GET /public/js/style.js HTTP/1.1" 200 -
+2023-03-30 02:46:47,589 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2023 02:46:47] "GET /public/imgs/favicon.ico HTTP/1.1" 200 -
+2023-03-30 02:58:59,900 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2023-03-30 02:58:59,900 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2023-03-30 02:58:59,902 - werkzeug - INFO -  * Restarting with stat
+2023-03-30 02:59:01,094 - werkzeug - WARNING -  * Debugger is active!
+2023-03-30 02:59:01,096 - werkzeug - INFO -  * Debugger PIN: 123-124-651
+2023-03-30 03:12:39,377 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2023-03-30 03:12:39,377 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2023-03-30 03:12:39,381 - werkzeug - INFO -  * Restarting with stat
+2023-03-30 03:12:40,182 - werkzeug - WARNING -  * Debugger is active!
+2023-03-30 03:12:40,183 - werkzeug - INFO -  * Debugger PIN: 123-124-651
+2023-03-30 03:12:43,023 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2023 03:12:43] "GET / HTTP/1.1" 200 -
+2023-03-30 03:12:43,300 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2023 03:12:43] "[36mGET /public/css/dist/style.css HTTP/1.1[0m" 304 -
+2023-03-30 03:12:43,302 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2023 03:12:43] "[36mGET /public/css/dist/output.css HTTP/1.1[0m" 304 -
+2023-03-30 03:12:43,481 - werkzeug - INFO - 127.0.0.1 - - [30/Mar/2023 03:12:43] "[36mGET /public/js/style.js HTTP/1.1[0m" 304 -
