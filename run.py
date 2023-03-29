@@ -14,7 +14,6 @@ app = Flask(__name__)
 myApp = MyApp(app)
 
 myApp.load_blueprints()
-myApp.setup_logging()
 
 if __name__ == '__main__':
     debug_mode = True if str(config.debug_mode) == 'True' else False
