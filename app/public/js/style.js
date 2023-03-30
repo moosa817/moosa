@@ -1,31 +1,31 @@
 // Whenever the user explicitly chooses light mode
 // localStorage.theme = 'dark'
-  
+
 
 // dark theme
 // On page load or when changing themes, best to add inline in `head` to avoid FOUC
 if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-    document.documentElement.classList.add('dark')
-  } else {
-    document.documentElement.classList.remove('dark')
-  }
+  document.documentElement.classList.add('dark')
+} else {
+  document.documentElement.classList.remove('dark')
+}
 
 
 
 
-  const checkbox = document.getElementById('checkbox');
-  
+const checkbox = document.getElementById('checkbox');
 
 
-checkbox.addEventListener('change', ()=>{
-  
-  if (document.documentElement.classList.contains('dark')){
+
+checkbox.addEventListener('change', () => {
+
+  if (document.documentElement.classList.contains('dark')) {
     localStorage.theme = 'light'
     document.documentElement.classList.remove('dark')
 
-    
+
   }
-  else{
+  else {
     localStorage.theme = 'dark'
     document.documentElement.classList.add('dark')
 
@@ -33,7 +33,7 @@ checkbox.addEventListener('change', ()=>{
   }
 })
 
-if(localStorage.theme === 'dark'){
+if (localStorage.theme === 'dark') {
   $('#checkbox').attr("checked", true);
 }
 
@@ -58,4 +58,51 @@ const observer = new IntersectionObserver(entries => {
 
 animatedElements.forEach(element => {
   observer.observe(element);
+});
+
+
+// typing animation
+function typeWriterEffect(element, speed) {
+  const text = element.textContent.trim();
+  element.textContent = '';
+  let i = 0;
+
+  function type() {
+    if (i < text.length) {
+      element.textContent += text.charAt(i);
+      i++;
+      setTimeout(type, speed);
+    } else {
+      document.getElementById('cursor').style.display = 'none'
+    }
+  }
+
+  setTimeout(type, speed);
+}
+
+const typingContainer = document.querySelector('#typing-container');
+const paragraphs = typingContainer.querySelectorAll('p');
+
+paragraphs.forEach(paragraph => {
+  typeWriterEffect(paragraph, 29);
+});
+
+
+
+//scroller 
+// Show the button when the user scrolls down 20px from the top of the document
+window.onscroll = function () { scrollFunction() };
+
+function scrollFunction() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    document.getElementById("scrollBtn").style.display = "block";
+  } else {
+    document.getElementById("scrollBtn").style.display = "none";
+  }
+}
+
+// When the user clicks on the button, scroll to the top of the document
+document.getElementById("scrollBtn").addEventListener("click", function () {
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
 });

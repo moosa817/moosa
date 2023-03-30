@@ -2,129 +2,198 @@ html {
   scroll-behavior: smooth;
 }
 
+hr {
+  background: #4CAF50;
+}
 
+#content {
+  overflow-x: hidden;
+}
+
+/* loading bar */
+#loading-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 4px;
+  background-color: #ddd;
+  z-index: 1000;
+}
+
+#loading-bar .bar {
+  position: absolute;
+  top: 0px;
+  left: 0;
+  width: 0%;
+  height: 100%;
+  background-color: #4CAF50;
+  animation: loading 6s ease-in-out infinite;
+  z-index: 100;
+}
+
+@keyframes loading {
+  0% {
+    width: 0%;
+  }
+
+  50% {
+    width: 50%;
+  }
+
+  75% {
+    width: 75%;
+  }
+
+  100% {
+    width: 97%;
+  }
+}
+
+
+
+/* typing */
+#typing-container p {
+  display: inline;
+}
+
+.cursor {
+  animation: blink 0.6s ease-in-out infinite;
+}
+
+.cursor::after {
+  content: '|'
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
 
 
 
 /* animate */
 
 .animate-up {
-    opacity: 0;
-    transform: translateY(-100%);
-    filter:blur(3px);
-    transition: all 1s;
-  }
-  
-  .animate-up.aos-animate {
-    opacity: 1;
-    transform: translateY(0);
-    filter:blur(0px);
-  }
+  opacity: 0;
+  transform: translateY(-100%);
+  filter: blur(3px);
+  transition: all 1s;
+}
 
-  .animate-left {
-    opacity:0;
-    filter:blur(2px);
-    transform:translateX(-100%);
-    transition: all 1s;
-  }
-  .animate-left.aos-animate {
-    opacity:1;
-    filter:blur(0px);
-    transform:translateX(0%);
-  }
+.animate-up.aos-animate {
+  opacity: 1;
+  transform: translateY(0);
+  filter: blur(0px);
+}
 
- 
-  .animate-right {
-    opacity:0;
-    filter:blur(2px);
-    transform:translateX(100%);
-    transition: all 1s;
-  }
-  .animate-right.aos-animate {
-    opacity:1;
-    filter:blur(0px);
-    transform:translateX(0%);
-  }
+.animate-left {
+  opacity: 0;
+  filter: blur(2px);
+  transform: translateX(-100%);
+  transition: all 1s;
+}
+
+.animate-left.aos-animate {
+  opacity: 1;
+  filter: blur(0px);
+  transform: translateX(0%);
+}
+
+
+.animate-right {
+  opacity: 0;
+  filter: blur(2px);
+  transform: translateX(100%);
+  transition: all 1s;
+}
+
+.animate-right.aos-animate {
+  opacity: 1;
+  filter: blur(0px);
+  transform: translateX(0%);
+}
 
 
 /* checkbox stuff */
 
-  .checkbox {
-    opacity: 0;
-    position: absolute;
-  }
-  
-  .label {
-    width: 50px;
-    height: 26px;
-    background-color:#111;
-    display: flex;
-    border-radius:50px;
-    align-items: center;
-    justify-content: space-between;
-    padding: 5px;
-    position: relative;
-    transform: scale(1.5);
-  }
-  
-  .ball {
-    width: 20px;
-    height: 20px;
-    background-color: white;
-    position: absolute;
-    top: 2px;
-    left: 2px;
-    border-radius: 50%;
-    transition: transform 0.2s linear;
-  }
-  
-  /*  target the elemenent after the label*/
-  .checkbox:checked + .label .ball{
-    transform: translateX(24px);
-  }
-  
-  .fa-moon {
-    color: pink;
-  }
-  
-  .fa-sun {
-    color: yellow;
-  }
+.checkbox {
+  opacity: 0;
+  position: absolute;
+}
+
+.label {
+  width: 50px;
+  height: 26px;
+  background-color: #111;
+  display: flex;
+  border-radius: 50px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5px;
+  position: relative;
+  transform: scale(1.5);
+}
+
+.ball {
+  width: 20px;
+  height: 20px;
+  background-color: white;
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  border-radius: 50%;
+  transition: transform 0.2s linear;
+}
+
+/*  target the elemenent after the label*/
+.checkbox:checked+.label .ball {
+  transform: translateX(24px);
+}
+
+.fa-moon {
+  color: pink;
+}
+
+.fa-sun {
+  color: yellow;
+}
 
 
-  /* /curves kinda junk idc */
-  .custom-shape-divider-top-1679610432 {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    overflow: hidden;
-    line-height: 0;
+/* /curves kinda junk idc */
+.custom-shape-divider-top-1679610432 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
 }
 
 .custom-shape-divider-top-1679610432 svg {
-    position: relative;
-    display: block;
-    width: calc(100% + 1.3px);
-    height: 174px;
+  position: relative;
+  display: block;
+  width: calc(100% + 1.3px);
+  height: 174px;
 }
 
 .custom-shape-divider-top-1679610432 .shape-fill {
-    fill: #64F6AC;
+  fill: #64F6AC;
 }
 
 /** For tablet devices **/
 @media (min-width: 768px) and (max-width: 1023px) {
-    .custom-shape-divider-top-1679610432 svg {
-        width: calc(100% + 1.3px);
-        height: 121px;
-    }
+  .custom-shape-divider-top-1679610432 svg {
+    width: calc(100% + 1.3px);
+    height: 121px;
+  }
 }
 
 .custom-shape-divider-top-1679610818 {
   position: relative;
   left: 0;
-  bottom:200px;
+  bottom: 200px;
   width: 100%;
   overflow: hidden;
   line-height: 0;
@@ -172,4 +241,91 @@ html {
     display: hidden;
 
   }
+}
+
+.custom-shape-divider-top-1679692840 {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 80vw;
+  overflow: hidden;
+  line-height: 0;
+  transform: rotate(180deg);
+}
+
+.custom-shape-divider-top-1679692840 svg {
+  position: static;
+  display: block;
+  width: calc(100% + 1.3px);
+  height: 54px;
+}
+
+.custom-shape-divider-top-1679692840 .shape-fill {
+  fill: #64F6AC;
+}
+
+
+.custom-shape-divider-bottom-1679833160 {
+  position: relative;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  transform: rotate(180deg);
+}
+
+.custom-shape-divider-bottom-1679833160 svg {
+  position: relative;
+  display: block;
+  width: calc(123% + 1.3px);
+  height: 75px;
+  transform: rotateY(180deg);
+}
+
+.custom-shape-divider-bottom-1679833160 .shape-fill {
+  fill: #64F6AC;
+}
+
+
+.custom-shape-divider-top-1679833674 {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  margin-top: 5%;
+}
+
+.custom-shape-divider-top-1679833674 svg {
+  position: relative;
+  display: block;
+  width: calc(100% + 1.3px);
+  height: 12px;
+}
+
+.custom-shape-divider-top-1679833674 .shape-fill {
+  fill: #64F6AC;
+}
+
+/* scroller */
+#scrollBtn {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 30px;
+  z-index: 99;
+  font-size: 18px;
+  border: none;
+  outline: none;
+  background-color: #000;
+  color: #fff;
+  cursor: pointer;
+  padding: 15px;
+  border-radius: 4px;
+}
+
+#scrollBtn:hover {
+  background-color: #555;
 }

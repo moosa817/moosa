@@ -3,6 +3,6 @@ __pycache__
 .env
 node_modules/
 .vscode
+tailwind.config.js
 package-lock.json
 package.json
-tailwind.config.js

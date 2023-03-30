@@ -5,7 +5,7 @@
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <link rel="shortcut icon" href="public/imgs/favicon.ico" type="image/x-icon">
+   <link rel="shortcut icon" href="public/imgs/logo.png" type="image/x-icon">
 
    <link rel="stylesheet" href="public/css/dist/output.css">
    <link rel="stylesheet" href="public/css/dist/style.css">
@@ -21,8 +21,7 @@
 
 <body class="dark:bg-gray-900 bg-gray-200 dark:text-white">
 
-   <nav data-aos="animate-up"
-      class="fixed top-0 z-50 w-full bg-gray-300 border-b border-gray-200 dark:bg-gray-800 dark:border-gray-700">
+   <nav class="fixed top-0 z-50 w-full bg-gray-300 border-b border-gray-200 dark:bg-gray-800 dark:border-gray-700">
       <div class="px-3 py-3 lg:px-5 lg:pl-3">
          <div class="flex items-center justify-between">
             <div class="flex items-center justify-start">
@@ -41,8 +40,8 @@
 
 
 
-               <a href="https://flowbite.com" class="flex ml-2 md:mr-24">
-                  <img src="https://flowbite.com/docs/images/logo.svg" class="h-8 mr-3" alt="FlowBite Logo" />
+               <a href="/" class="flex ml-2 md:mr-24">
+                  <img src="public/imgs/logo.png" class="h-8 mr-3" alt="Portfolio Logo" />
                   <span
                      class="self-center text-xl font-semibold sm:text-2xl whitespace-nowrap dark:text-white">Portfolio</span>
                </a>
@@ -56,7 +55,7 @@
       aria-label="Sidebar">
       <div class="h-full px-3 pb-4 overflow-y-auto bg-gray-300 dark:bg-gray-800">
          <ul class="space-y-2">
-            <li>
+            <li class="index">
                <a href="#home"
                   class=" hover:scale-105 hover:font-bold flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700">
                   <i class="fa-solid fa-home text-gray-400 p-1"></i>
@@ -64,8 +63,8 @@
                </a>
             </li>
 
-            <li>
-               <a href="#"
+            <li class="index">
+               <a href="#about"
                   class="hover:scale-105 flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700">
                   <i class="fa-solid fa-address-book text-gray-400 p-1"></i>
                   <span class="ml-3">About Me</span>
@@ -73,8 +72,8 @@
             </li>
 
 
-            <li>
-               <a href="#"
+            <li class="index">
+               <a href="#skills"
                   class="hover:scale-105 flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700">
                   <i class="fa-solid fa-graduation-cap text-gray-400 p-1"></i>
                   <span class="ml-3">Skills</span>
@@ -82,17 +81,17 @@
             </li>
 
 
-            <li>
-               <a href="#"
-                  class="hover:scale-105 flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700">
+            <li id="projects">
+               <a
+                  class="hover:cursor-pointer hover:scale-105 flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 ">
                   <i class="fa-solid fa-rectangle-list text-gray-400 p-1"></i>
                   <span class="ml-3">Projects</span>
                </a>
             </li>
 
 
-            <li>
-               <a href="#"
+            <li class="index">
+               <a href="#contact"
                   class="hover:scale-105 flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700">
                   <i class="fa-solid fa-phone text-gray-400 p-1"></i>
                   <span class="ml-3">Contact Me</span>
@@ -114,14 +113,19 @@
       </div>
    </aside>
 
-   <div class="sm:ml-64 dark:bg-gray-900 bg-gray-200 h-[100vh]">
-      {% block content %}{%endblock%}
+   <div id="loading-bar">
+      <div class="bar"></div>
    </div>
 
 
 
+   <div id="content" class="sm:ml-64 overflow-y-hidden">
 
 
+      {% block content %}{%endblock%}
+
+   </div>
+   <i id="scrollBtn" class="fa-solid fa-arrow-circle-up"></i>
 
 </body>
 
@@ -129,5 +133,6 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"
    integrity="sha512-pumBsjNRGGqkPzKHndZMaAG+bir374sORyzM3uulLV14lN5LyykqNk8eEeUlUkB3U0M4FApyaHraT65ihJhDpQ=="
    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-<script src="public/js/style.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.4/flowbite.min.js"></script>
+<script src="public/js/main.js"></script>
+<script src="public/js/style.js"></script>

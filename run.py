@@ -1,5 +1,7 @@
 from dotenv import load_dotenv
 import os
+import config
+
 if __name__ == '__main__':
     envs = load_dotenv() if os.path.exists('.env') else None
     if envs: print("env variables loaded from .env 1")
@@ -12,7 +14,8 @@ app = Flask(__name__)
 myApp = MyApp(app)
 
 myApp.load_blueprints()
-myApp.setup_logging()
 
 if __name__ == '__main__':
-    myApp.run_app()
+    debug_mode = True if str(config.debug_mode) == 'True' else False
+    app.run(host='0.0.0.0', debug=debug_mode)
+
