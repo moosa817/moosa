@@ -6,7 +6,7 @@ $(document).ready(function () {
 
     $('#loading-bar').hide();
 
-    $('#projects').click(function () {
+    $('#projects, #projects2, #projects3').click(function () {
         $('#loading-bar').show();
 
         $.ajax({

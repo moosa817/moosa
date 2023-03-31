@@ -1,5 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Alkatra&display=swap');
+
 html {
   scroll-behavior: smooth;
+  font-size: medium;
+}
+
+#content {
+  font-family: 'Alkatra', cursive;
 }
 
 hr {
@@ -79,10 +86,23 @@ hr {
   opacity: 0;
   transform: translateY(-100%);
   filter: blur(3px);
-  transition: all 1s;
+  transition: all 0.8s;
 }
 
 .animate-up.aos-animate {
+  opacity: 1;
+  transform: translateY(0);
+  filter: blur(0px);
+}
+
+.animate-down {
+  opacity: 0;
+  transform: translateY(100%);
+  filter: blur(3px);
+  transition: all 0.8s;
+}
+
+.animate-down.aos-animate {
   opacity: 1;
   transform: translateY(0);
   filter: blur(0px);
@@ -92,7 +112,7 @@ hr {
   opacity: 0;
   filter: blur(2px);
   transform: translateX(-100%);
-  transition: all 1s;
+  transition: all 0.8s;
 }
 
 .animate-left.aos-animate {
@@ -106,7 +126,7 @@ hr {
   opacity: 0;
   filter: blur(2px);
   transform: translateX(100%);
-  transition: all 1s;
+  transition: all 0.8s;
 }
 
 .animate-right.aos-animate {
