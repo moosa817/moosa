@@ -1,12 +1,10 @@
 
 
-$(document).ready(function () {
-    let web_page = 'home'
-})
+let web_page = 'home'
 
 $('#loading-bar').hide();
 
-$('#projects, #projects2, #projects3').click(function () {
+function load_projects() {
     $('#loading-bar').show();
 
     $.ajax({
@@ -46,67 +44,85 @@ $('#projects, #projects2, #projects3').click(function () {
             $('#loading-bar').fadeOut();
         }
     });
+}
+
+
+function load_index() {
+    if (web_page === 'home') {
+    }
+    else {
+        $('#loading-bar').show();
+
+
+        $.ajax({
+            url: "/index",
+            dataType: "json",
+            success: function (data) {
+
+                // AJAX request successful
+                $('#loading-bar').fadeOut();
+                $('#content').html(data.data)
+
+                const animatedElements = document.querySelectorAll("[data-aos]");
+
+                const observer = new IntersectionObserver(entries => {
+                    entries.forEach(entry => {
+                        if (entry.intersectionRatio > 0) {
+                            entry.target.classList.add("aos-animate");
+                        } else {
+                            entry.target.classList.remove("aos-animate");
+                        }
+                    });
+                });
+
+                animatedElements.forEach(element => {
+                    observer.observe(element);
+                });
+
+
+
+
+                // $('[data-aos]').removeClass('animate-up animate-left anime-right')
+                web_page = 'home'
+
+                $("html, body").animate({
+                    scrollTop: $(window.location.hash).offset().top
+                }, 10);
+
+
+
+
+
+
+            },
+            error: function () {
+                // AJAX request failed
+                alert("Failed to load data");
+                $('#loading-bar').fadeOut();
+            }
+        });
+
+    }
+}
+
+// .index load home pages
+const elements = document.querySelectorAll('.index');
+
+elements.forEach(function (element) {
+    element.addEventListener('click', function () {
+        // Code to execute when element is clicked
+        load_index()
+    });
 });
 
-$('.index')
-    .click(function () {
-        if (web_page === 'home') {
-        }
-        else {
-            $('#loading-bar').show();
+// load projects
+const elements1 = document.querySelectorAll('.projects');
 
-
-            $.ajax({
-                url: "/index",
-                dataType: "json",
-                success: function (data) {
-
-                    // AJAX request successful
-                    $('#loading-bar').fadeOut();
-                    $('#content').html(data.data)
-
-                    const animatedElements = document.querySelectorAll("[data-aos]");
-
-                    const observer = new IntersectionObserver(entries => {
-                        entries.forEach(entry => {
-                            if (entry.intersectionRatio > 0) {
-                                entry.target.classList.add("aos-animate");
-                            } else {
-                                entry.target.classList.remove("aos-animate");
-                            }
-                        });
-                    });
-
-                    animatedElements.forEach(element => {
-                        observer.observe(element);
-                    });
-
-
-
-
-                    // $('[data-aos]').removeClass('animate-up animate-left anime-right')
-                    web_page = 'home'
-
-                    $("html, body").animate({
-                        scrollTop: $(window.location.hash).offset().top
-                    }, 10);
-
-
-
-
-
-
-                },
-                error: function () {
-                    // AJAX request failed
-                    alert("Failed to load data");
-                    $('#loading-bar').fadeOut();
-                }
-            });
-
-        }
-    })
-
+elements1.forEach(function (element) {
+    element.addEventListener('click', function () {
+        load_projects()
+    });
+});
 
 
 $('#submit_main').click(function () {
