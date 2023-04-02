@@ -81,6 +81,17 @@ hr {
 
 
 /* animate */
+.animate-in {
+  opacity: 0;
+  filter: blur(3px);
+  transition: all 0.8s;
+}
+
+.animate-in.aos-animate {
+  opacity: 1;
+  filter: blur(0px);
+
+}
 
 .animate-up {
   opacity: 0;
