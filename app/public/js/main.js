@@ -150,6 +150,7 @@ $('#submit_main').click(function () {
             $('#loading-bar').hide();
 
             if (data.error) {
+                document.getElementById("submit_main").innerHTML = "Submit"
                 document.getElementById('error-box').classList.toggle('hidden')
                 document.getElementById('error-box').classList.toggle('flex')
                 document.getElementById('success-box').classList.add("hidden")
