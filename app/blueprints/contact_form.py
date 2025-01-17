@@ -5,6 +5,8 @@ import re
 import requests
 import os
 
+API_KEY = os.getenv("SENDGRID_API_KEY")
+
 def SendEmail(name,lastname, email, message, subject,email_to):
    
     html_content = f"""<!DOCTYPE html>
@@ -52,7 +54,7 @@ def SendEmail(name,lastname, email, message, subject,email_to):
 
     # Send email via SendGrid
     headers = {
-        "Authorization": f"Bearer {os.getenv("SENDGRID_API_KEY")}",
+        "Authorization": f"Bearer {API_KEY}",
         "Content-Type": "application/json",
     }
 
